@@ -63,6 +63,12 @@ class ArticlesController extends Controller
     public function update($id)
     {
         //Save edit resourse in base
+        request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
+
         $article = Article::find($id);
 
         $article->title = request('title');
