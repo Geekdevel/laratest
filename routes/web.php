@@ -60,10 +60,10 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles', 'ArticlesController@index')->name('articles.index');
 Route::get('/articles/create', 'ArticlesController@create');
 Route::post('/articles', 'ArticlesController@store');
-Route::get('/articles/{articles}', 'ArticlesController@show');
+Route::get('/articles/{articles}', 'ArticlesController@show')->name('articles.show');
 Route::get('/articles/{articles}/edit', 'ArticlesController@edit');
 Route::put('/articles/{articles}', 'ArticlesController@update');
 
