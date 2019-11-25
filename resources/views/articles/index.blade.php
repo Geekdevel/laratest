@@ -3,7 +3,7 @@
 @section('content')
 <div id="wrapper">
     <div id="page" class="container">
-        @foreach ($articles as $article)
+        @forelse ($articles as $article)
             <div class="content">
                 <div class="title">
                     <h2>
@@ -19,7 +19,9 @@
                 {!! $article->except !!}
 
             </div>
-        @endforeach
+        @empty
+            <p>No relevant articles yet.</p>
+        @endforelse
         <div id="sidebar">
             <ul class="style1">
                 @foreach ($articles as $article)
