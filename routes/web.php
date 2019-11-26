@@ -12,6 +12,15 @@
 */
 
 Route::get('/', function () {
+    $user = App\User::first();
+
+    $post = $user->posts()->create([
+        'title' => 'foobar',
+        'body' => 'lorem ipsulum dolorem set'
+    ]);
+
+    $post->tags()->attach(1);
+
     return view('welcome');
 });
 

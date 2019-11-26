@@ -42,8 +42,28 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
-    public function experiense()
+    public function experience()
     {
-        return $this->hasOne(Experiens::class);
+        return $this->hasOne(Experience::class);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function jobs()
+    {
+        return $this->hasMany(Job::class);
+    }
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function achievements()
+    {
+        return $this->hasMany(Achievement::class);
     }
 }
