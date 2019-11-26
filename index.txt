@@ -1,3 +1,4 @@
 Hello World!
 git reset --hard - изменит и сайм файл в рабочей папке на указанную версию, которую можно выбрать из списка git log
 12154
+ Lorem ipsulum dolorm sit amet ...
