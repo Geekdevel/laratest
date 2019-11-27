@@ -1,8 +1,6 @@
 <?php
 
-class BankAccount
+interface Animal
 {
-    const TAX = .09;
-}
 
-echo BankAccount::TAX;
+}
