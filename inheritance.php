@@ -1,6 +1,6 @@
 <?php
 
-abstract class Shape
+/*abstract class Shape
 {
     protected $color;
 
@@ -50,7 +50,7 @@ class Circle extends Shape
 }
 
 $circle = new Circle;
-echo $circle->getArea();
+echo $circle->getArea();*/
 
 //echo (new Square)->getArea();
 //echo (new Triangle)->getArea();
@@ -58,3 +58,24 @@ echo $circle->getArea();
 
 //echo (new Square())->getColor();
 //echo (new Circle('green'))->getArea();
+
+abstract class Mailer
+{
+    public function send($to, $from, $body)
+    {
+
+    }
+}
+
+class UserMailer extends Mailer
+{
+    public function sendWelcomeEmail(User $user)
+    {
+        return $this->send($user->email);
+    }
+}
+
+class AdminMailer extends Mailer
+{
+    //
+}
