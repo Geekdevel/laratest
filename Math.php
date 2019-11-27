@@ -2,12 +2,14 @@
 
 class Math
 {
-    public function add(...$nums)
+    public static function add(...$nums)
     {
         return array_sum($nums);
     }
 }
 
-$math = new Math;
+/*$math = new Math;
 
-var_dump($math->add(1, 2, 3, 4));
+var_dump($math->add(1, 2, 3, 4));*/
+
+echo Math::add(1, 2, 3, 4, 5);
