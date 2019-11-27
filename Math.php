@@ -1,31 +1,8 @@
 <?php
 
-class Person
+class BankAccount
 {
-    public $age = 1;
-
-    public function haveBirthdey()
-    {
-        $this->age += 1;
-    }
-    public function age()
-    {
-        return $this->age;
-    }
+    const TAX = .09;
 }
 
-$joe = new Person;
-$joe->haveBirthdey();
-$joe->haveBirthdey();
-
-echo $joe->age();
-
-echo ' | ';
-
-$jane = new Person;
-$jane->haveBirthdey();
-
-//echo $joe->age; //errors
-
-//echo Person::$age;
-echo $jane->age();
+echo BankAccount::TAX;
