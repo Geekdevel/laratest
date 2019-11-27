@@ -1,15 +1,22 @@
 <?php
 
-class Math
+class Person
 {
-    public static function add(...$nums)
+    public static $age = 1;
+
+    public function haveBirthdey()
     {
-        return array_sum($nums);
+        static::$age += 1;
     }
 }
 
-/*$math = new Math;
+$joe = new Person;
+$joe->haveBirthdey();
+$joe->haveBirthdey();
 
-var_dump($math->add(1, 2, 3, 4));*/
+$jane = new Person;
+$jane->haveBirthdey();
 
-echo Math::add(1, 2, 3, 4, 5);
+//echo $joe->age; //errors
+
+echo Person::$age;
