@@ -2,11 +2,15 @@
 
 class Person
 {
-    public static $age = 1;
+    public $age = 1;
 
     public function haveBirthdey()
     {
-        static::$age += 1;
+        $this->age += 1;
+    }
+    public function age()
+    {
+        return $this->age;
     }
 }
 
@@ -14,9 +18,14 @@ $joe = new Person;
 $joe->haveBirthdey();
 $joe->haveBirthdey();
 
+echo $joe->age();
+
+echo ' | ';
+
 $jane = new Person;
 $jane->haveBirthdey();
 
 //echo $joe->age; //errors
 
-echo Person::$age;
+//echo Person::$age;
+echo $jane->age();
