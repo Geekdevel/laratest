@@ -39,6 +39,6 @@ class UserController
     }
 }
 
-$controller = new UserController(new LogToFile);
+$controller = new UserController(new LogToDatabase);
 
 $controller->show();
