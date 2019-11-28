@@ -1,22 +1,44 @@
 <?php
 
-interface Animal
+interface Logger
 {
-    public function communicate();
+    //
 }
 
-class Dog implements Animal
+class LogToFile
 {
-    public function communicate()
+    public function execute($message)
     {
-        return 'bark';
+        var_dump('Log the message to a file: '.$message);
     }
 }
 
-class Cat implements Animal
+class LogToDatabase
 {
-    public function communicate()
+    public function execute($message)
     {
-        return 'meow';
+        var_dump('Log the message to a database: '.$message);
     }
 }
+
+
+class UserController
+{
+    protected $logger;
+
+    public function __construct(LogToFile $logger)
+    {
+        $this->logger = $logger;
+    }
+
+    public function show()
+    {
+        $user = 'JohnDoe';
+
+        $this->logger->execute($user);
+    }
+}
+
+$controller = new UserController(new LogToFile);
+
+$controller->show();
