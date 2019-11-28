@@ -1,44 +1,22 @@
 <?php
 
-interface Logger
+interface Repository
 {
-    public function execute($message);
+    public function save($data);
 }
 
-class LogToFile implements Logger
+class MongoRepository implements Repository
 {
-    public function execute($message)
+    public function save($data)
     {
-        var_dump('Log the message to a file: '.$message);
+        //
     }
 }
 
-class LogToDatabase implements Logger
+class FileRepository implements Repository
 {
-    public function execute($message)
+    public function save($data)
     {
-        var_dump('Log the message to a database: '.$message);
+        //
     }
 }
-
-
-class UserController
-{
-    protected $logger;
-
-    public function __construct(Logger $logger)
-    {
-        $this->logger = $logger;
-    }
-
-    public function show()
-    {
-        $user = 'JohnDoe';
-
-        $this->logger->execute($user);
-    }
-}
-
-$controller = new UserController(new LogToDatabase);
-
-$controller->show();
